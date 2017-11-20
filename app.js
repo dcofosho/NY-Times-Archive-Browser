@@ -1,5 +1,8 @@
 function getArticles(){
-	var url = "https://api.nytimes.com/svc/archive/v1/1990/2.json";
+	year = $('#year').val();
+	month = $('#month').val();
+	console.log(`year: ${year}, month: ${month}`)
+	var url = `https://api.nytimes.com/svc/archive/v1/${year}/${month}.json`;
 	url += '?' + $.param({
 	  'api-key': "a82c8a555ee9494fa331aa759b3f1f1b"
 	});
@@ -15,6 +18,9 @@ function getArticles(){
 	  .then(response => response.json()) // parse response as JSON
 	  .then(data => {
 	  	var ol = document.getElementById("output-list")
+	  	while (ol.hasChildNodes()) {
+    		ol.removeChild(ol.lastChild);
+		}
 	  	for(doc of data["response"]["docs"]){
 	  		var li = document.createElement("li");
 	  		var link = document.createElement("a");
@@ -31,4 +37,4 @@ function getArticles(){
 	    console.log(`Error: ${error.message}`);
 	  });
 }
-getArticles();
+//getArticles();
