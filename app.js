@@ -22,6 +22,7 @@ function getArticles(){
     		ol.removeChild(ol.lastChild);
 		}
 	  	for(doc of data["response"]["docs"]){
+	  		console.log(JSON.stringify(doc));
 	  		var li = document.createElement("li");
 	  		var link = document.createElement("a");
 	  		link.href = doc["web_url"];
