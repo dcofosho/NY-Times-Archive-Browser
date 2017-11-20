@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>NY Times Archive Browser</title>
+	<h1>NY Times Archive Browser</h1>
+	<hr>
+	<hr>
 </head>
 <body>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="./app.js"></script>
-	<input type="text" id = "year" value="Year"/>
+	<br>
+	<input type="text" id = "year" placeholder="Year"/>
+	<br>
 	<select id="month">
 		<option value="1">January</option>
 		<option value="2">February</option>
@@ -21,7 +26,25 @@
 		<option value="11">November</option>
 		<option value="12">December</option>
 	</select>
+	<br>
+	<select id="topic">
+		<option value="arts">Arts</option>
+		<option value="books">Books</option>
+		<option value="business">Business</option>
+		<option value="garden">Garden</option>
+		<option value="nyregion">NY Region</option>
+		<option value="obituaries">Obituaries</option>
+		<option value="opinion">Opinion</option>
+		<option value="science">Science</option>
+		<option value="sports">Sports</option>
+		<option value="style">Style</option>
+		<option value="theater">Theater</option>
+		<option value="us">US</option>
+		<option value="world">World</option>
+	</select>
+	<br>
 	<button id="submit-btn" onClick="getArticles()">Go</button>
+	<br>
 	<div id="output">
 		<ul id = "output-list">
 		</ul>
